@@ -1,33 +1,19 @@
 {
   "expo": {
-    "name": "brasil",
-    "slug": "brasil",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "config": {
-        "googleMaps": { "apiKey": "AIzaSyAsO_47Gke-SABV1O0SaFk5Y0eBiIHENKk" }   
-      }
+   "name": "Brasil",
+   "icon": "./assets/icon.png",
+   "version": "1.0.0",
+   "slug": "brasil",
+   "ios": {
+     "bundleIdentifier": "com.lucianasato.brasil",
+     "buildNumber": "1.0.0"
+   },
+   "android": {
+     "package": "com.lucianasato.brasil",
+     "versionCode": 1,
+     "config": {
+      "googleMaps": { "apiKey": "AIzaSyAsO_47Gke-SABV1O0SaFk5Y0eBiIHENKk" }   
     }
+   }
   }
 }
