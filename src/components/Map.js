@@ -10,22 +10,30 @@ const Map = () => {
       style={styles.map}
       loadingEnabled={true}
       region={{
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.015,
-      longitudeDelta: 0.0121,
+      latitude: -15.59611,
+      longitude: -56.09667,
+      latitudeDelta: 70,
+      longitudeDelta: 1,
       }}>
         <MapView.Marker
-          coordinate={{latitude: 37.78825,
-          longitude: -122.4324}}
-          title={"MEU TITULO 1..."}
-          description={"MINHA DESCRIÇÃO 1"}
+          coordinate={
+            {
+              latitude: -15.59611,
+              longitude: -56.09667
+            }
+          }
+          title={"Cuiabá"}
+          description={"Cuiabá"}
          />
-         <MapView.Marker
-          coordinate={{latitude: 37.78925,
-          longitude: -122.4324}}
-          title={"MEU TITULO 2"}
-          description={"MINHA DESCRIÇÃO 2"}
+        <MapView.Marker
+          coordinate={
+            {
+              latitude: -20.44278,
+              longitude: -54.64639
+            }
+          }
+          title={"Campo Grande"}
+          description={"Campo Grande"}
          />
       </MapView>
   );
