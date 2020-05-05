@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, SafeAreaView, FlatList} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const DATA = [
   {
@@ -34,6 +35,12 @@ const MapListScreen = ({ navigation }) => {
           />
         </SafeAreaView>
     </>;
+};
+
+MapListScreen.navigationOptions = {
+  tabBarIcon:({ tintColor }) => (  
+    <Icon name="ios-list" color={ tintColor}  size={ 30 }/>  
+  )
 };
 
 const styles = StyleSheet.create({
