@@ -1,8 +1,55 @@
 import React from 'react';
-import { StyleSheet, Dimensions } from 'react-native';
-import MapView, {Polyline, Circle} from 'react-native-maps';
+import { StyleSheet, Dimensions, Image } from 'react-native';
+import MapView, {Marker} from 'react-native-maps';
 
 const height = Dimensions.get('window').height;
+
+const response = [
+  {
+    id: '123',
+    coordinates: {
+      latitude: -15.59611,
+      longitude: -56.09667,
+    },
+    title: 'Cuiabá',
+    description: 'Cuiabá',
+    category: 1,
+    icon: 'park.png'
+  },
+  {
+    id: '456',
+    coordinates: {
+      latitude: -20.44278,
+      longitude: -54.64639,
+    },
+    title: 'Campo Grande',
+    description: 'Campo Grande',
+    category: 1,
+    icon: 'park.png'
+  },
+  {
+    id: '789',
+    coordinates: {
+      latitude: -23.5489,
+      longitude: -46.6388,
+    },
+    title: 'São Paulo',
+    description: 'São Paulo',
+    category: 1,
+    icon: 'park.png'
+  },
+  {
+    id: '102',
+    coordinates: {
+      latitude: -22.9035,
+      longitude: -43.2096,
+    },
+    title: 'Rio de Janeiro',
+    description: 'Rio de Janeiro',
+    category: 1,
+    icon: 'park.png'
+  },
+];
 
 const Map = () => {
   return (
@@ -15,27 +62,17 @@ const Map = () => {
       latitudeDelta: 70,
       longitudeDelta: 1,
       }}>
-        <MapView.Marker
-          coordinate={
-            {
-              latitude: -15.59611,
-              longitude: -56.09667
-            }
-          }
-          title={"Cuiabá"}
-          description={"Cuiabá"}
-         />
-        <MapView.Marker
-          coordinate={
-            {
-              latitude: -20.44278,
-              longitude: -54.64639
-            }
-          }
-          title={"Campo Grande"}
-          description={"Campo Grande"}
-         />
-      </MapView>
+         {response.map(marker => (
+            <Marker
+              key={marker.id}
+              coordinate={marker.coordinates}
+              title={marker.title}
+              description={marker.description}
+            >
+              <Image source={require('../../assets/park.png')} style={{ height: 32, width:32 }} />
+            </Marker>
+          ))}
+    </MapView>
   );
 };
 
