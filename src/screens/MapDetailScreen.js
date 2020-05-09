@@ -11,22 +11,17 @@ const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height / 2;
 
 const data = [
-    { id: "00", name: "image.png" },
-    { id: "01", name: "image.png" },
-    { id: "02", name: "image.png" },
-    { id: "03", name: "image.png" },
-    { id: "04", name: "image.png" },
-    { id: "05", name: "image.png" },
-    { id: "06", name: "image.png" },
-    { id: "07", name: "image.png" },
-    { id: "08", name: "image.png" },
-    { id: "09", name: "image.png" },
-    { id: "10", name: "image.png" },
-    { id: "11", name: "image.png" },
-    { id: "12", name: "image.png" },
-    { id: "13", name: "image.png" },
-    { id: "14", name: "image.png" },
-    { id: "15", name: "image.png" }
+    { id: "00", name: require('../../assets/toilet.png') },
+    { id: "01", name: require('../../assets/wifi.png') },
+    { id: "02", name: require('../../assets/shower.png') },
+    { id: "03", name: require('../../assets/water.png') },
+    { id: "04", name: require('../../assets/hiking.png') },
+    { id: "05", name: require('../../assets/tent1.png') },
+    { id: "06", name: require('../../assets/tent2.png') },
+    { id: "07", name: require('../../assets/transport.png') },
+    { id: "08", name: require('../../assets/vehicle.png') },
+    { id: "09", name: require('../../assets/washing-machine.png') },
+    { id: "10", name: require('../../assets/money.png') },
   ];
 
 const MapDetailScreen = ({navigation}) => {
@@ -39,7 +34,7 @@ const MapDetailScreen = ({navigation}) => {
   
   return (
     <>
-      <SafeAreaView style={styles.container} forceInset={{ top: 'always' }}>
+      <SafeAreaView style={styles.container}>
         <ScrollView scrollEnabled={true}>
           <Image source={require('../../assets/image.png')} style={ styles.image } />
           <Spacer>
@@ -70,7 +65,7 @@ const MapDetailScreen = ({navigation}) => {
                 numColumns={11}
                 renderItem={({ item }) => {
                   return (
-                    <Image source={require('../../assets/image.png')} style={ styles.icon } />
+                    <Image source={item.name} style={ styles.icon } />
                   );
                 }}
               />
@@ -95,10 +90,8 @@ const styles = StyleSheet.create({
     margin: 4,
   },
   list: {
-    backgroundColor: "#dcda48"
+    margin: 3
   }
 });
-
-MapDetailScreen.title = "TEste";
 
 export default MapDetailScreen;
