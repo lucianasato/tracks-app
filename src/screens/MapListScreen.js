@@ -89,6 +89,7 @@ const MapListScreen = ({ navigation }) => {
 };
 
 MapListScreen.navigationOptions = {
+  title: "Lista",
   tabBarIcon:({ tintColor }) => (  
     <Icon name="ios-list" color={ tintColor}  size={ 30 }/>  
   )
