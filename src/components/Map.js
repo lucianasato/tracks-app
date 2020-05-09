@@ -14,7 +14,7 @@ const response = [
     title: 'Cuiabá',
     description: 'Cuiabá',
     category: 1,
-    icon: 'park.png'
+    icon: require('../../assets/mark1.png')
   },
   {
     id: '456',
@@ -25,7 +25,7 @@ const response = [
     title: 'Campo Grande',
     description: 'Campo Grande',
     category: 1,
-    icon: 'park.png'
+    icon: require('../../assets/mark2.png')
   },
   {
     id: '789',
@@ -36,7 +36,7 @@ const response = [
     title: 'São Paulo',
     description: 'São Paulo',
     category: 1,
-    icon: 'park.png'
+    icon: require('../../assets/mark1.png')
   },
   {
     id: '102',
@@ -47,7 +47,18 @@ const response = [
     title: 'Rio de Janeiro',
     description: 'Rio de Janeiro',
     category: 1,
-    icon: 'park.png'
+    icon: require('../../assets/mark2.png')
+  },
+  {
+    id: '103',
+    coordinates: {
+      latitude: -3.71839,
+      longitude: -38.5434,
+    },
+    title: 'Ceará',
+    description: 'Ceará',
+    category: 1,
+    icon: require('../../assets/mark2.png')
   },
 ];
 
@@ -69,7 +80,7 @@ const Map = () => {
               title={marker.title}
               description={marker.description}
             >
-              <Image source={require('../../assets/park.png')} style={{ height: 32, width:32 }} />
+              <Image source={marker.icon} style={{ height: 32, width:32 }} />
             </Marker>
           ))}
     </MapView>
