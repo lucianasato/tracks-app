@@ -1,5 +1,5 @@
-import React, {useContext} from 'react';
-import { Text, StyleSheet, Dimensions } from 'react-native';
+import React from 'react';
+import { StyleSheet, Dimensions } from 'react-native';
 import MapView, {Polyline, Circle} from 'react-native-maps';
 
 const height = Dimensions.get('window').height;
@@ -10,7 +10,7 @@ const Map = () => {
       style={styles.map}
       loadingEnabled={true}
       region={{
-      latitude: -15.59611,
+      latitude: -15.59612,
       longitude: -56.09667,
       latitudeDelta: 70,
       longitudeDelta: 1,
@@ -38,6 +38,7 @@ const Map = () => {
       </MapView>
   );
 };
+
 
 const styles = StyleSheet.create({
   map: {

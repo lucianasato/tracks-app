@@ -1,40 +1,61 @@
 import React from 'react';
-import { View, StyleSheet, Text, SafeAreaView, FlatList} from 'react-native';
+import { View, StyleSheet, Text, FlatList, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { SafeAreaView } from 'react-navigation';
+import {ListItem} from 'react-native-elements';
 
-const DATA = [
+const response = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
+    name: 'Item 1',
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
+    name: 'Item 2',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
+    name: 'Item 3',
+  },
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b3',
+    name: 'Item 4',
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f62',
+    name: 'Item 5',
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d71',
+    name: 'Item 6',
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d41',
+    name: 'Item 7',
   },
 ];
 
-function Item({ title }) {
-  return (
-    <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
-    </View>
-  );
-}
-
 const MapListScreen = ({ navigation }) => {
-    return <>
-        <SafeAreaView style={styles.container}>
+    return (
+      <>
+        <SafeAreaView style={styles.container} forceInset={{ top: 'always' }}>
           <FlatList
-            data={DATA}
-            renderItem={({ item }) => <Item title={item.title} />}
+            data={ response }
             keyExtractor={item => item.id}
+            renderItem={({item}) => {
+              return (
+                <TouchableOpacity
+                  onPress={() =>
+                    navigation.navigate('MapDetail', {_id: item.id})
+                  }>
+                  <ListItem chevron title={item.name} />
+                </TouchableOpacity>
+              );
+            }}
           />
         </SafeAreaView>
-    </>;
+      </>
+    );
 };
 
 MapListScreen.navigationOptions = {
@@ -45,7 +66,9 @@ MapListScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    backgroundColor: "#dcda48",
+    margin: 4,
+    padding: 30
   }
 });
 
