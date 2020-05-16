@@ -7,6 +7,7 @@ import MapListScreen from './src/screens/MapListScreen';
 import MapDetailScreen from './src/screens/MapDetailScreen.js';
 import {setNavigator} from './src/navigationRef';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { MapProvider } from './src/context/MapContext';
 
 const mapListFlow = createStackNavigator({
   MapList: MapListScreen,
@@ -35,10 +36,12 @@ const App = createAppContainer(switchNavigator);
 
 export default () => {
   return (
-    <App
-      ref={navigator => {
-        setNavigator(navigator);
-      }}
-    />
+    <MapProvider>
+      <App
+        ref={navigator => {
+          setNavigator(navigator);
+        }}
+      />
+    </MapProvider>
   );
 };
